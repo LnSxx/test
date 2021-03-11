@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import axios from 'axios';
+import { WEATHER_LOCATION_RESPONSE_URL, WEATHER_RESPONSE_URL } from '../settings';
 import { getWeatherFail, getWeatherSuccess } from '../store/weather/actions';
 import { Weather } from '../store/weather/types';
 
@@ -10,8 +11,8 @@ interface WttrResponse {
 export default function getWeather() {
   return async (dispatch: any) => {
     try {
-      const response = await axios.get<WttrResponse>('http://wttr.in/?format=j1');
-      const locationResponse = await axios.get('http://wttr.in/?format=%22%l%22');
+      const response = await axios.get<WttrResponse>(WEATHER_RESPONSE_URL);
+      const locationResponse = await axios.get(WEATHER_LOCATION_RESPONSE_URL);
       if (Object.prototype.hasOwnProperty.call(response.data, 'current_condition')) {
         const weather: Weather = {
           FeelsLikeC: response.data.current_condition[0].FeelsLikeC,
