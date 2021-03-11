@@ -38,7 +38,7 @@ const AdvancedWeatherBoard: React.FC = () => {
       <IonCard>
         <IonCardHeader>
           <IonCardTitle>
-            {`${weatherData.pressure} mm Hg`}
+            {`${weatherData.pressure} hPa`}
           </IonCardTitle>
           <IonCardSubtitle>
             Pressure

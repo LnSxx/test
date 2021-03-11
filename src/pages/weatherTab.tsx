@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   IonContent,
   IonHeader,
@@ -20,7 +20,9 @@ const WeatherTab: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Current Weather</IonTitle>
+          <IonTitle>
+            Current Weather
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

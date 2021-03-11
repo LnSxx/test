@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   IonCard,
   IonCardContent,
@@ -32,11 +32,14 @@ const OptionsTab: React.FC = () => {
   const disableAdvancedModeHandler = () => {
     dispatch(disableAdvancedMode());
   };
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Options</IonTitle>
+          <IonTitle>
+            Options
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

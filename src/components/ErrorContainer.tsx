@@ -1,7 +1,8 @@
 import './container.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { IonButton } from '@ionic/react';
 import { useDispatch } from 'react-redux';
+import { HTTP } from '@ionic-native/http/ngx';
 import getWeather from '../api/getWeather';
 import { putFakeData } from '../store/weather/actions';
 
@@ -13,7 +14,9 @@ const ErrorContainer: React.FC<ContainerProps> = ({ error }) => {
   const dispatch = useDispatch();
   return (
     <div className="container">
-      <div>Weather unavailable</div>
+      <div>
+        Weather unavailable
+      </div>
       <strong>{error}</strong>
       <p>
         <IonButton onClick={() => { dispatch(getWeather()); }}>Retry</IonButton>
