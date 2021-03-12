@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import axios from 'axios';
+import { Dispatch } from 'redux';
 import { WEATHER_LOCATION_RESPONSE_URL, WEATHER_RESPONSE_URL } from '../settings';
 import { getWeatherFail, getWeatherSuccess } from '../store/weather/actions';
 import { Weather } from '../store/weather/types';
@@ -9,7 +10,7 @@ interface WttrResponse {
 }
 
 export default function getWeather() {
-  return async (dispatch: any) => {
+  return async (dispatch: Dispatch) => {
     try {
       const response = await axios.get<WttrResponse>(WEATHER_RESPONSE_URL);
       const locationResponse = await axios.get(WEATHER_LOCATION_RESPONSE_URL);
